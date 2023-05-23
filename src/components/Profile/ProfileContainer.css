@@ -1,0 +1,82 @@
+.profile-container {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.img-profile-container{
+    width: 15rem;
+    margin: 2rem;
+    display:flex;
+    flex-direction: column;   
+}
+
+.img-profile{
+    width: 100%;
+}
+
+.userinfo {
+    margin: 2rem;
+    
+}
+
+.userinfo h2{
+    font-size: 2rem;
+}
+
+.userinfo p {
+    margin:0;
+}
+
+.main-container-profile{
+    width:70%;
+    height: 35rem;
+    margin-top: 2rem;
+}
+.upload-background {
+    border-radius: 2rem;
+    margin-top: 4rem;
+    background-color: rgba(55, 64, 86, 0.3); /* Set the background color with opacity */
+}
+
+.upload-container {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+    width: 100%;
+    background-color: #374056; /* Set the background color without opacity */
+}
+
+.plus-icon{
+    font-size: 2.5rem;
+    margin: 1rem;
+    color: #00fd92;
+}
+
+
+.media-row{
+    margin-top: 2rem;
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+}
+
+.row-header{
+    display:flex;
+    align-items: center;
+}
+
+.row-header-icon {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.gifs-container{
+    display:flex;
+    height:10rem;
+    overflow: hidden;
+}

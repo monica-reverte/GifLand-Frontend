@@ -1,0 +1,15 @@
+.profile-avatar {
+    font-size: 1.8rem;
+    margin-right: 1.5rem;
+}
+
+.profile {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    width: 12rem;
+    justify-content: center;
+    align-items:center;
+    border-radius: 1rem;
+    padding: 0 1rem;
+}

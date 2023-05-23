@@ -1,0 +1,17 @@
+.button {
+    background-color: #6d63ff;
+    width: 12rem;
+    height: 3rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    cursor:pointer;
+
+}
+
+.button-container input {
+    display: none;
+}

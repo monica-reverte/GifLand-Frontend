@@ -1,0 +1,8 @@
+.trending-gif img{
+    height: 100%;
+    border-radius: 0.7rem;
+}
+
+.trending-gif {
+    margin: 0 0.3rem;
+}

@@ -1,0 +1,34 @@
+/* .media-container {
+
+} */
+
+
+.media-row{
+    margin-top: 2rem;
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+}
+
+.row-header{
+    display:flex;
+    align-items: center;
+}
+
+.row-header-icon {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.trending-container{
+    display:flex;
+    height:10rem;
+    overflow: hidden;
+}
+
+.artist-container {
+    display:flex;
+    overflow: hidden;
+    height: 16rem;
+}

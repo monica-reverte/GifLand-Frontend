@@ -1,0 +1,109 @@
+.header{
+    background-color: #374056;
+    display: flex;
+    align-items:center;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    
+    
+}
+
+.header img {
+    width: 8rem;
+}
+
+.menu {
+    display:flex;
+    flex: 1;
+    justify-content: space-between;
+    height: 2rem;
+    align-items: center;
+    
+
+}
+
+.button-wrapper{
+    height: 2.3rem;
+    display: flex;
+    align-items: flex-start;
+    margin: 0.5rem;
+}
+
+.button {
+    background-color: #6d63ff;
+    width: 12rem;
+    height: 3rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0.5rem;
+
+}
+
+.profile {
+    background-color: black;
+    display: flex;
+    width: 24rem;
+    justify-content: center;
+    align-items:center;
+    border-radius: 1rem;
+    padding: 0 1rem;
+}
+
+/* .profile img {
+    width: 35px;
+} */
+
+.reactions {
+    background: linear-gradient(90deg, #00fd92 0%, #00f0a2 75% );
+}
+.entretainment {
+    background: linear-gradient(90deg,#00f0a2  0%, #00e1b4 75% );
+}
+.sports {
+    background: linear-gradient(90deg,#00e1b4 0%, #00d2c6 75% );
+}
+.stickers {
+    background: linear-gradient(90deg,#00d2c6 0%, #00c3d7 75% );
+}
+.artist {
+    background: linear-gradient(90deg,#00c3d7 0%, #00b4e8 75%);
+}
+.morevertical {
+    background: linear-gradient(90deg,#00b4e8 0%, #00a3fc 75%);
+}
+
+.menu-button {
+    background-color:#374056;
+    height: 30px;
+    padding: 10px;
+    display: flex;
+    align-items:center;
+}
+
+.hover-reactions:hover{
+    background: linear-gradient(90deg, #00fd92 0%, #00f0a2 75% );
+}
+
+.hover-entretainment:hover{
+    background: linear-gradient(90deg,#00f0a2  0%, #00e1b4 75% );
+}
+
+.hover-sports:hover {
+    background: linear-gradient(90deg,#00e1b4 0%, #00d2c6 75% );
+}
+
+.hover-stickers:hover {
+    background: linear-gradient(90deg,#00d2c6 0%, #00c3d7 75% );
+}
+
+.hover-artist:hover {
+    background: linear-gradient(90deg,#00c3d7 0%, #00b4e8 75%);
+}
+
+.hover-morevertical:hover{
+    background: linear-gradient(90deg,#00b4e8 0%, #00a3fc 75%);
+}
+
