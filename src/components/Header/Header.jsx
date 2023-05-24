@@ -24,28 +24,28 @@ export const Header = () => {
       <div className="menu">
         <div className="button-wrapper entretainment">
           <div className="menu-button hover-entretainment">
-            <NavLink to={"/filter/movies"} activeClassName="active-link-movies">
+            <NavLink to={"/filter/movies"} >
             <h2>Movies</h2>
             </NavLink>
           </div>
         </div>
-        <div className="button-wrapper sports">
+        <div >
           <div className="menu-button hover-sports">
-          <NavLink to={"/filter/sports"} activeClassName="active-link-sports">
+          <NavLink to={"/filter/sports"} >
             <h2>Sports</h2>
             </NavLink>
           </div>
         </div>
         <div className="button-wrapper stickers">
           <div className="menu-button hover-stickers">
-          <NavLink to={"/filter/animals"} activeClassName="active-link-animals">
+          <NavLink to={"/filter/animals"} >
             <h2>Animals</h2>
             </NavLink>
           </div>    
         </div>
         <div className="button-wrapper artist">
           <div className="menu-button hover-artist">
-          <NavLink to={"/filter/babies"} activeClassName="active-link-babies">
+          <NavLink to={"/filter/babies"} >
             <h2>Babies</h2>
           </NavLink>
           </div>

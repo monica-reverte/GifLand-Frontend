@@ -1,0 +1,48 @@
+
+
+.landscape-left-row{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom:2rem;
+
+}
+
+.landscape-right-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    gap: 2rem;
+    margin-bottom:2rem;
+
+}
+
+.no-landcape-row{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom:2rem;
+
+}
+
+.gif-title{
+    height:20rem;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.gif-title img{
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+    border-radius: 1rem;;
+
+}
+
+
+.text-title{
+    position: absolute;
+    bottom: 0.1rem;
+    left:1rem;
+
+}
