@@ -3,6 +3,10 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { gifContext } from '../../Context/GifContext';
 import "./DetailsContainer.css"
 import { deleteGifRequest, updateGifRequest } from '../../api/apiGifs';
+import { ImFacebook2 } from "react-icons/im";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaTwitterSquare, FaHeart } from "react-icons/fa";
+
 
 export const DetailsContainer = () => {
 
@@ -61,20 +65,20 @@ const saveChanges = async (e) => {
         </div>
         <div className="gif-info-container">
         {isEditing ? (
-                <input onChange={handleEdit} onKeyDown={saveChanges} type="text" value={currentGif.title} />
+                <input onChange={handleEdit} onKeyDown={saveChanges} className="input-edit" type="text" value={currentGif.title} />
             ) : (
                 <p>{gif.title}</p>
             )}
-            {/* <p>{gif.title}</p> */}
-            <button onClick={() => setIsEditing(true)}>Edit</button>
-            <button onClick={() => handleDelete(id)}>Delete</button>
+            
+            <button className="button-edit" onClick={() => setIsEditing(true)}>Edit</button>
+            <button className="button-delete" onClick={() => handleDelete(id)}>Delete</button>
         </div>
       </div>
       <div className="share-container">
-        <p>Share</p>
-        <p>Share</p>
-        <p>Share</p>
-        <p>Share</p>
+        <ImFacebook2 className="facebook" />
+        <AiFillInstagram className="instagram" />
+        <FaTwitterSquare className="twitter"/>
+        <FaHeart className="like"/>
         
       </div>
       </div>

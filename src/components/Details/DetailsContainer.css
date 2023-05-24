@@ -23,3 +23,86 @@
 .gif-info-container p{
     font-size: 3rem;
 }
+
+.button-edit {
+    background: linear-gradient(90deg, #00fd92 0%, #00b4e8 75% );
+    color:white;
+    width: 12rem;
+    height: 3rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    cursor:pointer;
+    border: none;
+    font: inherit;
+    
+    
+
+}
+
+.button-delete {
+    background: linear-gradient(90deg, #fe0707 0%, #470604 75% );
+    color:white;
+    width: 12rem;
+    height: 3rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    cursor:pointer;
+    border: none;
+    font: inherit;
+    
+    
+
+}
+
+.input-edit{
+    background-color:transparent;
+    color:white;
+    border: 2px solid white;
+    border-radius: 1rem;
+    padding: 2rem;
+    height: 2.3rem;
+    font-size: 2rem;
+    width:20rem;
+    margin:1rem;
+}
+
+.share-container{
+    display: flex;
+    flex-direction: row;
+    margin:3rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.facebook{
+    font-size: 3rem;
+    color:#00fd92;
+    margin: 1rem;
+}
+
+.instagram{
+    font-size: 4rem;
+    color:#00e1b4 ;
+    margin: 1rem;
+}
+
+.twitter{
+    font-size:3.5rem;
+    color:#00c3d7 ;
+    margin: 1rem;
+}
+
+.like{
+    font-size: 3rem;
+    color:#00a3fc;
+    margin: 1rem;
+}

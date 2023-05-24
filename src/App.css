@@ -27,6 +27,14 @@ body p{
   font-size: 1rem;
   font-weight: bold;
 }
+
+.button{
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color:white;
+}
+
 .app {
   display:flex;
   justify-content:center;
