@@ -6,38 +6,48 @@ import { UploadImage } from "../UploadImage/UploadImage"
 import { LoginButton } from '../Login/LoginButton';
 import { useAuth0 } from '@auth0/auth0-react';
 import { ProfileButton } from '../ProfileButton/ProfileButton';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 export const Header = () => {
 
   const {isAuthenticated} = useAuth0();
+
+
   
 
   return (
     <div className="header">
-      <Link to="/">
+      <NavLink to="/">
         <img src={logo} alt="logo" />
-      </Link>
+      </NavLink>
       <div className="menu">
         <div className="button-wrapper entretainment">
           <div className="menu-button hover-entretainment">
-            <h2>Entertainment</h2>
+            <NavLink to={"/filter/movies"}>
+            <h2>Movies</h2>
+            </NavLink>
           </div>
         </div>
         <div className="button-wrapper sports">
           <div className="menu-button hover-sports">
+          <NavLink to={"/filter/sports"}>
             <h2>Sports</h2>
+            </NavLink>
           </div>
         </div>
         <div className="button-wrapper stickers">
           <div className="menu-button hover-stickers">
-            <h2>Stickers</h2>
+          <NavLink to={"/filter/animals"}>
+            <h2>Animals</h2>
+            </NavLink>
           </div>    
         </div>
         <div className="button-wrapper artist">
           <div className="menu-button hover-artist">
-            <h2>Artist</h2>
+          <NavLink to={"/filter/babies"}>
+            <h2>Babies</h2>
+          </NavLink>
           </div>
           </div>
         <div className="button-wrapper morevertical">

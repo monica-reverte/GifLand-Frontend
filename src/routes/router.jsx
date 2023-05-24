@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
         element: <Profile />
     },
     {
-        path: "/page",
+        path: "/filter/:type",
         element: <FilterPage />
     },
     {

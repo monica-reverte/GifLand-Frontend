@@ -4,6 +4,7 @@
   margin: 0,;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 body {
@@ -35,3 +36,16 @@ body p{
   width: 90%;
   margin-top: 3%;
 }
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:active {
+  color: inherit;
+}
+
