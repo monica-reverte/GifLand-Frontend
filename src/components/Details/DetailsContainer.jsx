@@ -25,7 +25,7 @@ export const DetailsContainer = () => {
             const updatedList = gifs.filter(gif => gif._id !== id);
             setGifs(updatedList);
         }
-        
+    
     }
 
 const handleEdit = (e) => {
