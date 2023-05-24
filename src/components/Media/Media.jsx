@@ -8,7 +8,7 @@ import { fetchSearched, fetchTrending } from '../../api/apiRequest';
 import { Trending } from '../Trending/Trending';
 import giphyArtist from '../artist';
 import { Artist } from '../Artist/Artist';
-import { Splide, SplideSlide} from "@splidejs/react-splide"
+
 
 
 export const Media = () => {

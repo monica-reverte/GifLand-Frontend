@@ -8,6 +8,7 @@ import { gifContext } from '../../Context/GifContext';
 import { getGifRequest } from '../../api/apiGifs';
 import { MyGifs } from '../MyGifs/MyGifs';
 import { UsersContext } from '../../Context/UserContext';
+import userimg from "../../assets/user.gif";
 
 
 export const ProfileContainer = () => {
@@ -18,7 +19,6 @@ export const ProfileContainer = () => {
 
     const getGifs = async() =>{
       const gifs = await getGifRequest(user.id);
-      console.log(gifs)
       setGifs(gifs.data);
       
   }
@@ -30,6 +30,8 @@ export const ProfileContainer = () => {
   
   }, [])
 
+  
+
     if(isLoading) {
         return <div>Loading...</div>
     }
@@ -40,7 +42,7 @@ export const ProfileContainer = () => {
           
             <div className="profile-container">
               <div className="img-profile-container">
-                <img src={user.picture} alt="user" className="img-profile"/>
+                <img src={userimg} alt="user" className="img-profile"/>
                 <Logout />
               </div>
 

@@ -107,3 +107,6 @@
     background: linear-gradient(90deg,#00b4e8 0%, #00a3fc 75%);
 }
 
+.active-link-movies {
+   background: linear-gradient(90deg, #00fd92 0%, #00f0a2 75% );
+  }

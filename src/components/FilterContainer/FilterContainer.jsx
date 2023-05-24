@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import { getSearchGifs } from '../../api/apiRequest';
+import "./FilterContainer.css";
+import { motion } from 'framer-motion';
 
 export const FilterContainer = () => {
 
@@ -23,19 +25,26 @@ export const FilterContainer = () => {
 
 
   return (
-    <div> 
+    <div className="container">
+    <motion.div 
+      animate={{opacity:1}}
+      initial={{opacity: 0}}
+      exit={{opacity: 0}}
+      transition={{duration: 0.5}}
+      className="filter-container"> 
+
       {filter.map((item)=> {
         return(
-          <div key={item.id}>
+          <div className="card" key={item.id}>
             <Link to={"/filter/" + item.id}>
             <img src={item.images.original.url} alt={item.title}/>
-            <h4>{item.title}</h4>
             </Link>
           </div>
         )
       })}
       
     
+    </motion.div>
     </div>
   )
 }

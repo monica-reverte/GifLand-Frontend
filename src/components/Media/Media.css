@@ -22,10 +22,11 @@
 }
 
 .trending-container{
-    display:flex;
+    display: flex;
     height:10rem;
     overflow: hidden;
 }
+
 
 .artist-container {
     display:flex;
