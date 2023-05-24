@@ -18,14 +18,23 @@ export const Storie = ({ gifsArray }) => {
 
     const GifTitle = ({giphy}) => {
         let gifUrl = giphy ? giphy.images.downsized.url : "";
+        
         return(
             <div className="title">
             <div className="gif-title">
                 <div className='text-title'>
                     <p>{giphy?.title}</p>
                 </div>
-                
                 <img src={gifUrl} />
+                <div className="line-box">
+                    <div className="line-top-green"></div>
+                    <div className="line-top-midgreen"></div>
+                    <div className="line-top-blue"></div>
+                
+
+                </div>
+                
+                
             </div>
             </div>
         )
