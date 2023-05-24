@@ -3,7 +3,6 @@ import "./Storie.css"
 
 
 export const Storie = ({ gifsArray }) => {
-    console.log(gifsArray)
 
     const getGif = () => {
         let randomIndex = Math.floor(Math.random ()* 15) + 0;
@@ -65,23 +64,7 @@ export const Storie = ({ gifsArray }) => {
                 </div>
             )
         })}
-        {/* <div className="landscape-left-row">
-            <GifTitle giphy={getGif()}/>
-            <GifTitle giphy={getGif()} />
-            <GifTitle giphy={getGif()}/>
-        </div>
-        <div className="landscape-right-row">
-            <GifTitle giphy={getGif()}/>
-            <GifTitle giphy={getGif()} />
-            <GifTitle giphy={getGif()}/>
-        </div>
-        <div className="no-landscape-row">
-            <GifTitle giphy={getGif()}/>
-            <GifTitle giphy={getGif()} />
-            <GifTitle giphy={getGif()}/>
-            <GifTitle giphy={getGif()}/>
 
-        </div> */}
     </div>
   )
 }

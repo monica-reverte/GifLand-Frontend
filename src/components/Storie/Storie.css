@@ -16,7 +16,7 @@
 
 }
 
-.no-landcape-row{
+.no-landscape-row{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
@@ -48,19 +48,19 @@
 }
 
 .line-top-green{
-    background-color: #00fd92;
+    background: #00fd92;
     height:3rem;
 
 }
 
 .line-top-midgreen{
-    background-color: #00d2c6;
+    background: #00d2c6;
     height:2rem;
     margin: 0 1rem;
 }
 
 .line-top-blue{
-    background-color: #00a3fc ;
+    background: #00a3fc ;
     height:1rem;
     margin: 0 2rem;
 }

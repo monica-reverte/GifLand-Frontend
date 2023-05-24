@@ -8,7 +8,6 @@ import { fetchSearched, fetchTrending } from '../../api/apiRequest';
 import { Trending } from '../Trending/Trending';
 import giphyArtist from '../artist';
 import { Artist } from '../Artist/Artist';
-import { Splide, SplideSlide} from "@splidejs/react-splide"
 import '@splidejs/react-splide/css';
 import { Storie } from '../Storie/Storie';
 
@@ -51,8 +50,7 @@ export const Media = () => {
 
   }, [])
 
-  console.log(trending)
-  console.log(stories)
+
 
 
   return (
@@ -63,17 +61,11 @@ export const Media = () => {
           <h1>Trending</h1>
         </div>        
         <div className="trending-container">
-        <Splide options={{
-            perPage: 6,
-            arrows: true,
-            pagination: false,
-            drag: "free",
-            gap: "2rem",
-          }}>
+  
           {trending.data?.map((trend, index) => {
             return <Trending trend={trend} key={index} />;
           })}
-          </Splide>
+          
         </div>
       </div>
 

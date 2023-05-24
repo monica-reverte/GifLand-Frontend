@@ -30,10 +30,12 @@ export const Header = () => {
           </div>
         </div>
         <div >
+        <div className="button-wrapper sports">
           <div className="menu-button hover-sports">
           <NavLink to={"/filter/sports"} >
             <h2>Sports</h2>
             </NavLink>
+          </div>
           </div>
         </div>
         <div className="button-wrapper stickers">

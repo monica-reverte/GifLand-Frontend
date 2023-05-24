@@ -18,7 +18,7 @@ export const getSearchGifs = async (name) => {
 
 export const fetchTrending = async() => {
     return await axios.get(
-        `${GHIPHY_BASE_REQUEST}trending?api_key=${VITE_API_KEY}&limit=25&rating=g`
+        `${GHIPHY_BASE_REQUEST}trending?api_key=${VITE_API_KEY}&limit=107&rating=g`
     )
 
 };
