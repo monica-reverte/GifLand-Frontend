@@ -10,17 +10,16 @@ export const UploadImage = () => {
   
 
   const createGif = async (e) => {
-    console.log(user);
     const data = new FormData();
     
     data.append('file', e.target.files[0]);
     data.append('userId', user.id);
-    console.log(data)
     
     const response = await createGifRequest(data)
-    console.log(response);
+    console.log(response)
     if(response.data.ok){
-      setGifs([...gifs, response.data]);
+      
+      setGifs([...gifs, response.data.gif]);
     }
 
   };

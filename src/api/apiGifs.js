@@ -2,9 +2,9 @@ import axios from 'axios';
 
 const API_URL = import.meta.env.VITE_APP_API_URL;
 
-export const getGifRequests = async (userData) =>  {
+export const getGifRequest = async (userId) =>  {
   return await axios
-    .get(`${API_URL}/gifs/getgif`, userData)
+    .get(`${API_URL}/gifs/getgif/${userId}`, userId)
     .catch((res) => res.response.data.msg);
 };
 
@@ -23,6 +23,12 @@ export const deleteGifRequest = async (id) => {
 
 export const updateGifRequest = async (data) => {
   return await axios
-      .delete(`${API_URL}/gifs/edit`, data)
+      .put(`${API_URL}/gifs/edit`, data)
       .catch((res) => res.response.data.msg);
   };
+
+  export const getGifIdRequest = async (id) =>  {
+    return await axios
+      .get(`${API_URL}/gifs/${id}`, id)
+      .catch((res) => res.response.data.msg);
+  }

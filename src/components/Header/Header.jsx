@@ -6,6 +6,7 @@ import { UploadImage } from "../UploadImage/UploadImage"
 import { LoginButton } from '../Login/LoginButton';
 import { useAuth0 } from '@auth0/auth0-react';
 import { ProfileButton } from '../ProfileButton/ProfileButton';
+import { Link } from 'react-router-dom';
 
 
 export const Header = () => {
@@ -15,7 +16,9 @@ export const Header = () => {
 
   return (
     <div className="header">
+      <Link to="/">
         <img src={logo} alt="logo" />
+      </Link>
       <div className="menu">
         <div className="button-wrapper entretainment">
           <div className="menu-button hover-entretainment">

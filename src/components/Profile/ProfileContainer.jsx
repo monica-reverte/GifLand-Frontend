@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Logout } from '../Logout/Logout';
 import "./ProfileContainer.css";
 import {BsPlusSquare, BsFiletypeGif} from "react-icons/bs"
 import { UploadImage } from '../UploadImage/UploadImage';
+import { gifContext } from '../../Context/GifContext';
+import { getGifRequest } from '../../api/apiGifs';
+import { MyGifs } from '../MyGifs/MyGifs';
+import { UsersContext } from '../../Context/UserContext';
 
 
 export const ProfileContainer = () => {
 
-    const {user, isAuthenticated, isLoading} = useAuth0();
+    const {isAuthenticated, isLoading} = useAuth0();
+    const { user } = useContext(UsersContext);
+    const {gifs, setGifs} = useContext(gifContext);
+
+    const getGifs = async() =>{
+      const gifs = await getGifRequest(user.id);
+      console.log(gifs)
+      setGifs(gifs.data);
+      
+  }
+
+  useEffect(() => {
+      getGifs();
+      
+
+  
+  }, [])
 
     if(isLoading) {
         return <div>Loading...</div>
@@ -16,6 +36,7 @@ export const ProfileContainer = () => {
 
   return (
     isAuthenticated && (
+      
           
             <div className="profile-container">
               <div className="img-profile-container">
@@ -42,13 +63,16 @@ export const ProfileContainer = () => {
                   <h1>My gifs</h1>
                 </div>       
               <div className="gifs-container">
-                <h1>Content</h1>
+              {gifs.length > 0 ? (
+            gifs.map(gif => (
+                <MyGifs key={gif._id} gif={gif} />
+            )
+            )):(<p> You don't have any Gif yet</p>)} 
               </div>
             </div>
             </div>
-                
             </div>
-            
+
             
     )
     
