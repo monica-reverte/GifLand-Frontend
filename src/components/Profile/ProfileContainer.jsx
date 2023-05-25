@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Logout } from '../Logout/Logout';
 import "./ProfileContainer.css";
@@ -13,14 +13,14 @@ import userimg from "../../assets/user.gif";
 
 export const ProfileContainer = () => {
 
-    const {isAuthenticated, isLoading} = useAuth0();
     const { user } = useContext(UsersContext);
     const {gifs, setGifs} = useContext(gifContext);
+    const [isLoading, setIsLoading] = useState(true);
 
     const getGifs = async() =>{
       const gifs = await getGifRequest(user.id);
       setGifs(gifs.data);
-      
+      setIsLoading(false);
   }
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export const ProfileContainer = () => {
     }
 
   return (
-    isAuthenticated && (
+    user && (
       
           
             <div className="profile-container">

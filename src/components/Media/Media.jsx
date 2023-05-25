@@ -61,7 +61,7 @@ export const Media = () => {
           <h1>Trending</h1>
         </div>        
         <Splide options={{
-            perPage: 7,
+            perPage: 8,
             breakpoints: {
               1024: {
                 perPage: 5,

@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Header.css';
 import  logo  from "../../assets/Giflandlogo.png";
 import {  MdMoreVert } from "react-icons/md";
 import { UploadImage } from "../UploadImage/UploadImage"
 import { LoginButton } from '../Login/LoginButton';
-import { useAuth0 } from '@auth0/auth0-react';
 import { ProfileButton } from '../ProfileButton/ProfileButton';
 import { NavLink } from 'react-router-dom';
+import { UsersContext } from '../../Context/UserContext';
 
 
 export const Header = () => {
 
-  const {isAuthenticated} = useAuth0();
+  const { user } = useContext(UsersContext);
 
 
   
@@ -61,12 +61,12 @@ export const Header = () => {
 
       
     <div>
-    {isAuthenticated && <UploadImage />}
+    {user && <UploadImage />}
 
     </div>
       
       <div className="profile">
-        {isAuthenticated ? <>
+        {user ? <>
         <ProfileButton />
         </>
         : <LoginButton />}
