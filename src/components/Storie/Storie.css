@@ -48,19 +48,19 @@
 }
 
 .line-top-green{
-    background: #00fd92;
-    height:3rem;
+    background-color: #00fd92;
+    height:0.8rem;
 
 }
 
 .line-top-midgreen{
     background: #00d2c6;
-    height:2rem;
+    height:0.6rem;
     margin: 0 1rem;
 }
 
 .line-top-blue{
     background: #00a3fc ;
-    height:1rem;
+    height:0.4rem;
     margin: 0 2rem;
 }

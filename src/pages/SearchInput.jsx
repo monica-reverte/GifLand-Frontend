@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Header } from '../components/Header/Header';
 import { getSearchGifs } from '../api/apiRequest';
-import axios from 'axios';
+import "../components/Search/Searchinput.css";
+import { motion } from 'framer-motion';
 
 
 export const SearchInput = () => {
@@ -21,17 +22,26 @@ export const SearchInput = () => {
 
 
   return (
-    <div>
+    <div >
       <Header />
+      <div className="container">
+    <motion.div 
+      animate={{opacity:1}}
+      initial={{opacity: 0}}
+      exit={{opacity: 0}}
+      transition={{duration: 0.5}}
+      className="filter-container"> 
       {searchGif.map((item) => (
-        <div key={item.id}>
+        <div className="card" key={item.id}>
           <Link to={`/search/${item.id}`}>
             
             <img src={item.images.original.url} alt={item.title} />
-            <h4>{item.title}</h4>
+            
           </Link>
         </div>
       ))}
+      </motion.div></div>
+
     </div>
   );
 };

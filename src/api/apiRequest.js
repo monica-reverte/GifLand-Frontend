@@ -1,13 +1,10 @@
-import api from "./api";
+
 import axios from "axios";
 
 const GHIPHY_BASE_REQUEST = `https://api.giphy.com/v1/gifs/`;
 const VITE_API_KEY= import.meta.env.VITE_API_KEY;
 
-const DEFAULT_PARAMS = {
-    api_key: import.meta.env.VITE_API_KEY, 
-    limit: 15
-}
+
 
 export const getSearchGifs = async (name) => {
     return await axios.get(
@@ -18,18 +15,24 @@ export const getSearchGifs = async (name) => {
 
 export const fetchTrending = async() => {
     return await axios.get(
-        `${GHIPHY_BASE_REQUEST}trending?api_key=${VITE_API_KEY}&limit=107&rating=g`
+        `${GHIPHY_BASE_REQUEST}trending?api_key=${VITE_API_KEY}&limit=25&offset=0&rating=g&lang=en`
     )
 
 };
 
-export const fetchSearched = (query) => {
-    return api.get("search", {
-        baseURL: GHIPHY_BASE_REQUEST,
-        params: {
-            ...DEFAULT_PARAMS,
-            q: query,
-        },
-    });
+export const getArtistRequest = async() => {
+    return await axios.get(
+        `${GHIPHY_BASE_REQUEST}search?api_key=${VITE_API_KEY}&q="Grande+Dame"&limit=25&offset=0&rating=g&lang=en`
+    )
+
 };
+
+export const getStoriesRequest = async() => {
+    return await axios.get(
+        `${GHIPHY_BASE_REQUEST}search?api_key=${VITE_API_KEY}&q=party&limit=25&offset=0&rating=g&lang=en`
+    )
+
+};
+
+
 

@@ -3,10 +3,9 @@ import "./Media.css"
 import {BiTrendingUp} from "react-icons/bi";
 import {MdFlashOn} from "react-icons/md";
 import {FaCloudUploadAlt} from "react-icons/fa";
-import { CgStories } from "react-icons/cg"
-import { fetchSearched, fetchTrending } from '../../api/apiRequest';
+import {  fetchTrending, getArtistRequest, getStoriesRequest } from '../../api/apiRequest';
 import { Trending } from '../Trending/Trending';
-import giphyArtist from '../artist';
+
 import { Artist } from '../Artist/Artist';
 import '@splidejs/react-splide/css';
 import { Storie } from '../Storie/Storie';
@@ -25,27 +24,28 @@ export const Media = () => {
 
   }
 
+
   const getArtist = async() => {
+    const artist = await getArtistRequest();
+    setArtist(artist.data);
 
-    const artist = await Promise.all(
-    giphyArtist.map( async (giphyArtist)=>{
-      return fetchSearched(giphyArtist).then ((res) => res.data.data)
-
-    })
-    );
-
-    setArtist(artist.flat());
   }
 
-  const getSearchedGifs= async (query, setState) => {
-    const searched = await fetchSearched(query);
-    setState(searched.data)
+  
+  const getStories = async() => {
+    const storie = await getStoriesRequest();
+    setStories(storie.data);
+
   }
+
+  console.log(stories.data)
+
+
   
   useEffect(() => {
     getTrending();
     getArtist();
-    getSearchedGifs("party", setStories);
+    getStories();
     
 
   }, [])
@@ -75,7 +75,7 @@ export const Media = () => {
           <h1>Artist</h1>
         </div> 
         <div className="artist-container">
-          {artist.map((artistGif, index) => {
+          {artist.data?.map((artistGif, index) => {
             return <Artist artist={artistGif} key={index} />
           })}
         </div>
@@ -87,7 +87,7 @@ export const Media = () => {
           <h1>Last Uploads</h1>
         </div>        
         <div className="storie-container">
-          <Storie gifsArray={stories}/>
+          <Storie gifsArray={stories.data}/>
         </div>
       </div>
 
