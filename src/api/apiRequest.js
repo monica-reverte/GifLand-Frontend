@@ -22,7 +22,7 @@ export const fetchTrending = async() => {
 
 export const getArtistRequest = async() => {
     return await axios.get(
-        `${GHIPHY_BASE_REQUEST}search?api_key=${VITE_API_KEY}&q="Grande+Dame"&limit=25&offset=0&rating=g&lang=en`
+        `${GHIPHY_BASE_REQUEST}search?api_key=${VITE_API_KEY}&q="Grande+Dame"&limit=6&offset=0&rating=g&lang=en`
     )
 
 };

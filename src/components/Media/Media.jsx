@@ -91,7 +91,7 @@ export const Media = () => {
       <div className="media-row">
         <div className="row-header">
           <MdFlashOn className="row-header-icon"/>
-          <h1>Artist</h1>
+          <h1>Popular Users</h1>
         </div> 
         <div className="artist-container">
           {artist.data?.map((artistGif, index) => {
