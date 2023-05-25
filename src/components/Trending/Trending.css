@@ -1,5 +1,7 @@
 .trending-gif img{
     height: 10rem;
+    width: 10rem;
+    object-fit: cover;
     border-radius: 0.7rem;
 }
 

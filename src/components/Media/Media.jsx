@@ -5,7 +5,7 @@ import {MdFlashOn} from "react-icons/md";
 import {FaCloudUploadAlt} from "react-icons/fa";
 import {  fetchTrending, getArtistRequest, getStoriesRequest } from '../../api/apiRequest';
 import { Trending } from '../Trending/Trending';
-import { Splide, SplideSlide} from "@splidejs/react-splide"
+import { Splide} from "@splidejs/react-splide"
 import "@splidejs/splide/dist/css/splide.min.css";
 import { Artist } from '../Artist/Artist';
 import { Storie } from '../Storie/Storie';
@@ -38,7 +38,7 @@ export const Media = () => {
 
   }
 
-  console.log(stories.data)
+
 
 
   
@@ -61,7 +61,20 @@ export const Media = () => {
           <h1>Trending</h1>
         </div>        
         <Splide options={{
-            perPage: 3,
+            perPage: 7,
+            breakpoints: {
+              1024: {
+                perPage: 5,
+              },
+              767: {
+                perPage: 3,
+            
+              },
+              640: {
+                perPage: 2,
+          
+              },
+            },
             arrows: true,
             pagination: false,
             drag: "free",
