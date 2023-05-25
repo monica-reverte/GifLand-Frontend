@@ -14,7 +14,6 @@ export const DetailsContainer = () => {
   const { gifs, setGifs } = useContext(gifContext);
 
   const [isEditing, setIsEditing] = useState(false);
-  const [isDeletionSuccess, setIsDeletionSuccess] = useState(false);
 
   const gif = gifs.find((gif) => gif._id === id);
   const [currentGif, setCurrentGif] = useState(gif);
@@ -26,19 +25,15 @@ export const DetailsContainer = () => {
 
   const handleDelete = async (id) => {
     const response = await deleteGifRequest(id);
-    console.log(response);
     if (response.data.ok) {
       const updatedList = gifs.filter((gif) => gif._id !== id);
       setGifs(updatedList);
-      setIsDeletionSuccess(true);
-      toast.success('Image deleted successfully!');
       navigate("/profile")
     }
   };
 
 const handleEdit = (e) => {
     setCurrentGif({ ...currentGif, title: e.target.value });
-    console.log(currentGif)
 
 }
 
@@ -48,11 +43,11 @@ const saveChanges = async (e) => {
   
       if (response.data.ok) {
         const updatedGif = response.data.updatedGif;
-        console.log(updatedGif)
+        
         const newArray = gifs.map((gif) =>
           gif._id === updatedGif._id ? updatedGif : gif
         );
-        console.log(newArray)
+        
         setGifs(newArray);
       }
   
@@ -62,7 +57,7 @@ const saveChanges = async (e) => {
   
     return (
         <div className="details-container">
-          <ToastContainer />
+          
       <div className="gif-info">
 
         <div className="gif-img-container">        

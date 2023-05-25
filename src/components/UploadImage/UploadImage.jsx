@@ -19,7 +19,6 @@ export const UploadImage = () => {
     setIsLoading(true);
 
     const response = await createGifRequest(data);
-    console.log(response);
     if (response.data.ok) {
       setGifs([...gifs, response.data.gif]);
       setIsUploadSuccess(true);
