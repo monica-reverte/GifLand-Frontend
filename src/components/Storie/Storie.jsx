@@ -50,40 +50,10 @@ export const Storie = ({ gifsArray }) => {
                 <GifTitle giphy={getGif()} />
                 <GifTitle giphy={getGif()} />
                 <GifTitle giphy={getGif()} />
+                <GifTitle giphy={getGif()} />
             </div>
         </div>
     )
 }
 
 
-
-    
-//     const gridGifsConfig = [
-//         ["landscape-left-row", 3],
-//         ["landscape-right-row", 3],
-//         ["no-landscape-row", 4]
-//     ]
-
-//     const  createTitles = (numTitles) => {
-//         let title = []
-//         for (let i = 0; i< numTitles; i++) {
-//             title.push(<GifTitle giphy={getGif()} key={i}/>)
-//         }
-//         return title
-//     }
-
-
-//   return (
-//     <div className="stories-section">
-//         {gridGifsConfig.map(([layoutClass, numTitles], index)=> {
-//             const titles = createTitles(numTitles);
-//             return (
-//                 <div className={layoutClass} key={index}>
-//                     {titles}
-//                 </div>
-//             )
-//         })}
-
-//     </div>
-//   )
-// }

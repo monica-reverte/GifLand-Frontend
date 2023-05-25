@@ -1,8 +1,12 @@
 .gifs-gif img{
-    height: 100%;
+    height: 10rem;
+    width: 10rem;
     border-radius: 0.7rem;
 }
 
 .gifs-gif {
-    margin: 0 0.3rem;
+    margin: 0.3rem;
+    
+    
+    
 }

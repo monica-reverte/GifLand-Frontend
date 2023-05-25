@@ -1,36 +1,40 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { gifContext } from '../../Context/GifContext';
-import "./DetailsContainer.css"
+import './DetailsContainer.css';
 import { deleteGifRequest, updateGifRequest } from '../../api/apiGifs';
-import { ImFacebook2 } from "react-icons/im";
-import { AiFillInstagram } from "react-icons/ai";
-import { FaTwitterSquare, FaHeart } from "react-icons/fa";
-
+import { ImFacebook2 } from 'react-icons/im';
+import { AiFillInstagram } from 'react-icons/ai';
+import { FaTwitterSquare, FaHeart } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const DetailsContainer = () => {
+  const { id } = useParams();
+  const { gifs, setGifs } = useContext(gifContext);
 
-    const { id } = useParams();
-    const { gifs, setGifs } = useContext(gifContext);
-    
-    const [isEditing, setIsEditing] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [isDeletionSuccess, setIsDeletionSuccess] = useState(false);
 
-    const gif = gifs.find((gif) => gif._id === id);
-    const [currentGif, setCurrentGif] = useState(gif);
-  
-    if (!gif) {
-      return <div>Gif not found</div>;
+  const gif = gifs.find((gif) => gif._id === id);
+  const [currentGif, setCurrentGif] = useState(gif);
+  const navigate = useNavigate();
+
+  if (!gif) {
+    return <div>Gif not found</div>;
+  }
+
+  const handleDelete = async (id) => {
+    const response = await deleteGifRequest(id);
+    console.log(response);
+    if (response.data.ok) {
+      const updatedList = gifs.filter((gif) => gif._id !== id);
+      setGifs(updatedList);
+      setIsDeletionSuccess(true);
+      toast.success('Image deleted successfully!');
+      navigate("/profile")
     }
-
-    const handleDelete = async(id) => {
-        const response = await deleteGifRequest(id);
-        console.log(response)
-        if(response.data.ok){
-            const updatedList = gifs.filter(gif => gif._id !== id);
-            setGifs(updatedList);
-        }
-    
-    }
+  };
 
 const handleEdit = (e) => {
     setCurrentGif({ ...currentGif, title: e.target.value });
@@ -58,6 +62,7 @@ const saveChanges = async (e) => {
   
     return (
         <div className="details-container">
+          <ToastContainer />
       <div className="gif-info">
 
         <div className="gif-img-container">        

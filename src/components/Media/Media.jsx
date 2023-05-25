@@ -5,9 +5,9 @@ import {MdFlashOn} from "react-icons/md";
 import {FaCloudUploadAlt} from "react-icons/fa";
 import {  fetchTrending, getArtistRequest, getStoriesRequest } from '../../api/apiRequest';
 import { Trending } from '../Trending/Trending';
-
+import { Splide, SplideSlide} from "@splidejs/react-splide"
+import "@splidejs/splide/dist/css/splide.min.css";
 import { Artist } from '../Artist/Artist';
-import '@splidejs/react-splide/css';
 import { Storie } from '../Storie/Storie';
 
 
@@ -60,13 +60,19 @@ export const Media = () => {
           <BiTrendingUp className="row-header-icon" />
           <h1>Trending</h1>
         </div>        
-        <div className="trending-container">
+        <Splide options={{
+            perPage: 3,
+            arrows: true,
+            pagination: false,
+            drag: "free",
+            gap: "1rem",
+          }}>
   
           {trending.data?.map((trend, index) => {
             return <Trending trend={trend} key={index} />;
           })}
-          
-        </div>
+          </Splide>
+        
       </div>
 
       <div className="media-row">
