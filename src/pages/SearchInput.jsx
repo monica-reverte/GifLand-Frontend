@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Header } from '../components/Header/Header';
 import { getSearchGifs } from '../api/apiRequest';
-import "../components/Search/Searchinput.css";
+import "../components/Search/SearchInput.css";
 import { motion } from 'framer-motion';
 
 
